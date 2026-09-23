@@ -1,4 +1,4 @@
-# Feedback to Brief｜把感觉问明白
+# Clear Feedback｜把反馈问清楚
 
 “不够高级”“不好用”“感觉不对”是有价值的反馈，但同一句话可能指向完全不同的改法。这个 Skill 指导支持 `SKILL.md` 的 AI Agent 先检查现有作品和已知要求，再针对真正影响方向的分歧提问，形成可比较的修订方向；宿主具备相应能力时再做小样。它不会把用户变成设计师，也不会把每句模糊反馈都变成一张长问卷。
 
@@ -8,12 +8,12 @@
 
 ```powershell
 New-Item -ItemType Directory -Force -Path "$HOME\.agents\skills" | Out-Null
-git clone https://github.com/Ww-Cooooo/feedback-to-brief.git "$HOME\.agents\skills\feedback-to-brief"
+git clone https://github.com/Ww-Cooooo/clear-feedback.git "$HOME\.agents\skills\clear-feedback"
 ```
 
-在 Codex 的 Skill 列表中确认出现 “Feedback to Brief”；没出现时重启 Codex。第一次使用时，把现有作品（文件、截图、链接或可访问的项目）交给 Agent，并补上当前对话里没有的关键要求或参考，再明确调用它，例如：
+在 Codex 的 Skill 列表中确认出现 “Clear Feedback”；没出现时重启 Codex。第一次使用时，把现有作品（文件、截图、链接或可访问的项目）交给 Agent，并补上当前对话里没有的关键要求或参考，再明确调用它，例如：
 
-> 请用 $feedback-to-brief 帮我处理这版作品的反馈：我觉得它不够好，但说不清原因。先结合现有作品和之前的要求判断；只有不同理解会导致不同改法时，才问我具体问题。信息够了就给我看一版小样。
+> 请用 $clear-feedback 帮我处理这版作品的反馈：我觉得它不够好，但说不清原因。先结合现有作品和之前的要求判断；只有不同理解会导致不同改法时，才问我具体问题。信息够了就给我看一版小样。
 
 先在同一对话里看 Agent 对问题的判断或提问；如果它能制作小样，就通过该宿主支持的预览或文件查看，无法读取作品或制作小样时应说明限制。Skill 的描述也可帮助宿主在相关任务中自动选择它，但是否自动触发由宿主决定，安装一次不等于所有 AI 产品和设备都已启用。其他支持 `SKILL.md` 的宿主可复制整个文件夹；安装位置、发现机制和对子 Agent 的传递方式以该宿主为准。
 
@@ -24,7 +24,7 @@ git clone https://github.com/Ww-Cooooo/feedback-to-brief.git "$HOME\.agents\skil
 - 用户不需要自己设计解决方案。Agent 应给出专业诊断与推荐，信息足够就试做，再用结果校准理解。
 - 明确的修改或可复现故障不需要访谈；小问题也不会被升级成长期固定规则。
 
-它可以与 [More Than Yes](https://github.com/Ww-Cooooo/more-than-yes) 配合，但没有依赖关系：Feedback to Brief 专门处理模糊反馈如何变成下一版；More Than Yes 提醒 Agent 在开放工作中独立核对目标、证据和遗漏。
+它可以与 [More Than Yes](https://github.com/Ww-Cooooo/more-than-yes) 配合，但没有依赖关系：Clear Feedback 专门处理模糊反馈如何变成下一版；More Than Yes 提醒 Agent 在开放工作中独立核对目标、证据和遗漏。
 
 本包只有指令和展示信息，没有可执行脚本、模型或额外依赖；它不自带上传对话或读取文件的程序。把作品交给 AI 宿主时，内容可能按该宿主的设置由模型服务处理；Agent 是否进一步查看文件、访问网络或修改作品，仍取决于宿主工具和用户授予的权限。它不能保证一次提问就理解全部偏好，也不能保证每次自动触发。
 
